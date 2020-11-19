@@ -82,6 +82,10 @@ namespace GitLabApiClient
             Connection = new ConnectionClient(_httpFacade);
         }
 
+        public string Sudo(string user)
+        {
+            return _httpFacade.Sudo(user);
+        }
         /// <summary>
         /// Access GitLab's issues API.
         /// </summary>

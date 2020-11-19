@@ -62,6 +62,13 @@ namespace GitLabApiClient.Internal.Http
             _pagedRequestor = new GitLabApiPagedRequestor(_requestor);
         }
 
+        public string Sudo(string user)
+        {
+            string tmp = _requestor.Sudo;
+            _requestor.Sudo = user;
+            return tmp;
+        }
+
         public Task<IList<T>> GetPagedList<T>(string uri) =>
             _pagedRequestor.GetPagedList<T>(uri);
 

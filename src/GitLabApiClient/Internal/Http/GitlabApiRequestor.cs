@@ -39,6 +39,8 @@ namespace GitLabApiClient.Internal.Http
             }
         }
 
+        public string Sudo { get; set; }
+
         public async Task<T> Post<T>(string url, object data = null)
         {
             StringContent content = SerializeToString(data);
@@ -144,6 +146,10 @@ namespace GitLabApiClient.Internal.Http
                 new StringContent(string.Empty);
 
             content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+            if(!string.IsNullOrEmpty(Sudo))
+            {
+                content.Headers.Add("sudo", Sudo);
+            }
             return content;
         }
     }
