@@ -106,6 +106,8 @@ namespace GitLabApiClient
         /// <returns>Newly created milestone.</returns>
         Task<Milestone> CreateMilestoneAsync(ProjectId projectId, CreateProjectMilestoneRequest request);
 
+        Task<User> CreateUserAsync(ProjectId projectId, CreateProjectUserRequest request);
+
         /// <summary>
         /// Updates existing project.
         /// </summary>

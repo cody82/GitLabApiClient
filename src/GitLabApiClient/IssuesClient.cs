@@ -195,5 +195,8 @@ namespace GitLabApiClient
         /// <param name="noteId">The ID of a note.</param>
         public async Task DeleteNoteAsync(ProjectId projectId, int issueIid, int noteId) =>
             await _httpFacade.Delete($"projects/{projectId}/issues/{issueIid}/notes/{noteId}");
+
+        public async Task DeleteAsync(ProjectId projectId, int issueIid) =>
+            await _httpFacade.Delete($"projects/{projectId}/issues/{issueIid}");
     }
 }

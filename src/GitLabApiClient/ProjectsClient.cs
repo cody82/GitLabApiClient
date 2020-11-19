@@ -173,6 +173,12 @@ namespace GitLabApiClient
             return await _httpFacade.Post<Milestone>($"projects/{projectId}/milestones", request);
         }
 
+        public async Task<User> CreateUserAsync(ProjectId projectId, CreateProjectUserRequest request)
+        {
+            Guard.NotNull(request, nameof(request));
+            return await _httpFacade.Post<User>($"projects/{projectId}/members", request);
+        }
+
         /// <summary>
         /// Updates existing project.
         /// </summary>
