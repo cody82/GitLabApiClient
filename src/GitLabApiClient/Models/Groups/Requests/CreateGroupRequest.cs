@@ -15,7 +15,7 @@ namespace GitLabApiClient.Models.Groups.Requests
         public CreateGroupRequest(string name, string path)
         {
             Guard.NotEmpty(name, nameof(name));
-            Guard.NotEmpty(path, nameof(path));
+            //Guard.NotEmpty(path, nameof(path));
             Name = name;
             Path = path;
         }
